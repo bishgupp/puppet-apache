@@ -17,5 +17,9 @@ hierarchy:
     paths:
       - "os/%{facts.os.name}.yaml"
       - "os/%{facts.os.family}.yaml"
+  
+  - name: 'Operating System Family'
+    path: '%{facts.os.family}-family.yaml'
+
   - name: 'common'
     path: 'common.yaml'
