@@ -12,9 +12,9 @@ class apache  (
   String $service_name,
   Enum["running","stopped"] $service_ensure,
   Boolean $service_enable,
-  String[1] $vhosts_dir,
-  String[1] $vhosts_owner,
-  String[1] $vhosts_group,
+  String $vhosts_dir,
+  String $vhosts_owner,
+  String $vhosts_group,
 ) {
   contain apache::install
   contain apache::config

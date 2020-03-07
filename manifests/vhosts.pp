@@ -6,7 +6,7 @@
 #   apache::vhosts { 'namevar': }
 define apache::vhosts (
   Integer $port,
-  String[1] $sitename,
+  String[1] $subdomain,
   String $admin,
   String[1] $docroot,
 ) {
@@ -21,7 +21,7 @@ define apache::vhosts (
     owner   => $apache::vhosts_owner,
     group   => $apache::vhosts_group,
     mode    => '0644',
-    content => epp('apache/vhosts.conf.epp', {'port' => $port, 'suddomain' => $suddomain, 'admin' => $admin, 'docroot' => $docroot}),
+    content => epp('apache/vhosts.conf.epp', {'port' => $port, 'subdomain' => $subdomain, 'admin' => $admin, 'docroot' => $docroot}),
     notify  => Service["${apache::service_name}"],
   }
 }
